@@ -34,26 +34,31 @@ console.log(AwesomeLibrary.formatDate(date)); // '12/25/2023'
 ## Methods
 
 ### String Utilities
+
 - `truncateString(str, maxLength, suffix)`: Truncate a string
 - `isValidEmail(email)`: Validate email address
 - `toSlug(str)`: Convert string to URL-friendly slug
 
 ### Number Utilities
+
 - `formatNumber(num)`: Add thousand separators
 - `generateUUID()`: Create a unique identifier
 - `roundTo(num, decimalPlaces)`: Round to specific decimal places
 
 ### Array Utilities
+
 - `shuffleArray(array)`: Randomly shuffle array
 - `removeDuplicates(array)`: Remove duplicate values
 
 ### Date Utilities
+
 - `formatDate(date, format)`: Format date to string
 - `daysBetween(date1, date2)`: Calculate days between dates
 
 ## License
 
 MIT
+
 ```
 
 New Features Added:
@@ -76,3 +81,4 @@ New Features Added:
    - Days between dates calculation
 
 Would you like me to elaborate on any of these new functions or add any specific utility methods?
+```
