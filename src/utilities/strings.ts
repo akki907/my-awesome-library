@@ -6,8 +6,8 @@
  * @returns Capitalized string
  */
 export function capitalize(str: string): string {
-    if (!str) return '';
-    return str.charAt(0).toUpperCase() + str.slice(1);
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 /**
@@ -18,12 +18,12 @@ export function capitalize(str: string): string {
  * @returns Truncated string
  */
 export function truncateString(
-    str: string,
-    maxLength: number,
-    suffix: string = '...'
+  str: string,
+  maxLength: number,
+  suffix: string = '...'
 ): string {
-    if (str.length <= maxLength) return str;
-    return str.slice(0, maxLength) + suffix;
+  if (str.length <= maxLength) return str;
+  return str.slice(0, maxLength) + suffix;
 }
 
 /**
@@ -32,8 +32,8 @@ export function truncateString(
  * @returns True if the string is alphanumeric, false otherwise
  */
 export function isAlphaNumeric(str: string): boolean {
-    const alphaNumericRegex = /^[a-z0-9]+$/i;
-    return alphaNumericRegex.test(str);
+  const alphaNumericRegex = /^[a-z0-9]+$/i;
+  return alphaNumericRegex.test(str);
 }
 
 /**
@@ -42,7 +42,7 @@ export function isAlphaNumeric(str: string): boolean {
  * @returns The word count
  */
 export function countWords(str: string): number {
-    return str.trim().split(/\s+/).length;
+  return str.trim().split(/\s+/).length;
 }
 
 /**
@@ -51,11 +51,11 @@ export function countWords(str: string): number {
  * @returns The kebab-case formatted string
  */
 export function toKebabCase(str: string): string {
-    return str
-        .toLowerCase()
-        .trim()
-        .replace(/\s+/g, '-')
-        .replace(/[^\w-]+/g, '');
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '');
 }
 
 /**
@@ -64,13 +64,13 @@ export function toKebabCase(str: string): string {
  * @returns The camelCase formatted string
  */
 export function toCamelCase(str: string): string {
-    return str
-        .toLowerCase()
-        .trim()
-        .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) =>
-            index === 0 ? match.toLowerCase() : match.toUpperCase()
-        )
-        .replace(/\s+/g, '');
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) =>
+      index === 0 ? match.toLowerCase() : match.toUpperCase()
+    )
+    .replace(/\s+/g, '');
 }
 
 /**
@@ -79,8 +79,8 @@ export function toCamelCase(str: string): string {
  * @returns Whether the email is valid
  */
 export function isValidEmail(email: string): boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
 
 /**
@@ -89,9 +89,9 @@ export function isValidEmail(email: string): boolean {
  * @returns Slug-formatted string
  */
 export function toSlug(str: string): string {
-    return str
-        .toLowerCase()
-        .trim()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/[\s_-]+/g, '-');
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-');
 }

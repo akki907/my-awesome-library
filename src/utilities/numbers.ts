@@ -7,7 +7,7 @@
  * @returns Random number
  */
 export function randomNumber(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 /**
@@ -16,7 +16,7 @@ export function randomNumber(min: number, max: number): number {
  * @returns Whether the number is even
  */
 export function isEven(num: number): boolean {
-    return num % 2 === 0;
+  return num % 2 === 0;
 }
 
 /**
@@ -25,7 +25,7 @@ export function isEven(num: number): boolean {
  * @returns Whether the number is odd
  */
 export function isOdd(num: number): boolean {
-    return Math.abs(num % 2) === 1;
+  return Math.abs(num % 2) === 1;
 }
 
 /**
@@ -34,7 +34,7 @@ export function isOdd(num: number): boolean {
  * @returns Whether the value is a number
  */
 export function isNumber(value: unknown): value is number {
-    return typeof value === 'number' && !isNaN(value);
+  return typeof value === 'number' && !isNaN(value);
 }
 
 /**
@@ -43,7 +43,7 @@ export function isNumber(value: unknown): value is number {
  * @returns Maximum number
  */
 export function findMax<T extends number>(array: T[]): T | undefined {
-    return array.length > 0 ? (Math.max(...array) as T) : undefined;
+  return array.length > 0 ? (Math.max(...array) as T) : undefined;
 }
 
 /**
@@ -52,7 +52,7 @@ export function findMax<T extends number>(array: T[]): T | undefined {
  * @returns Minimum number
  */
 export function findMin<T extends number>(array: T[]): T | undefined {
-    return array.length > 0 ? (Math.min(...array) as T) : undefined;
+  return array.length > 0 ? (Math.min(...array) as T) : undefined;
 }
 
 /**
@@ -61,7 +61,7 @@ export function findMin<T extends number>(array: T[]): T | undefined {
  * @returns Formatted number string
  */
 export function formatNumber(num: number): string {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 /**
@@ -71,6 +71,6 @@ export function formatNumber(num: number): string {
  * @returns Rounded number
  */
 export function roundTo(num: number, decimalPlaces: number = 2): number {
-    const factor = Math.pow(10, decimalPlaces);
-    return Math.round(num * factor) / factor;
+  const factor = Math.pow(10, decimalPlaces);
+  return Math.round(num * factor) / factor;
 }

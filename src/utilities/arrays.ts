@@ -6,15 +6,12 @@
  * @returns Shuffled array
  */
 export function shuffleArray<T>(array: T[]): T[] {
-    const shuffledArray = [...array];
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledArray[i], shuffledArray[j]] = [
-            shuffledArray[j],
-            shuffledArray[i],
-        ];
-    }
-    return shuffledArray;
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
 }
 
 /**
@@ -24,7 +21,7 @@ export function shuffleArray<T>(array: T[]): T[] {
  * @returns Sorted array
  */
 export function sortByKey<T>(array: T[], key: keyof T): T[] {
-    return [...array].sort((a, b) => (a[key] > b[key] ? 1 : -1));
+  return [...array].sort((a, b) => (a[key] > b[key] ? 1 : -1));
 }
 
 /**
@@ -34,11 +31,11 @@ export function sortByKey<T>(array: T[], key: keyof T): T[] {
  * @returns Chunked array
  */
 export function chunk<T>(array: T[], size: number): T[][] {
-    const result: T[][] = [];
-    for (let i = 0; i < array.length; i += size) {
-        result.push(array.slice(i, i + size));
-    }
-    return result;
+  const result: T[][] = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
 }
 
 /**
@@ -48,7 +45,7 @@ export function chunk<T>(array: T[], size: number): T[][] {
  * @returns Difference between arrays
  */
 export function difference<T>(array1: T[], array2: T[]): T[] {
-    return array1.filter((item) => !array2.includes(item));
+  return array1.filter((item) => !array2.includes(item));
 }
 
 /**
@@ -58,7 +55,7 @@ export function difference<T>(array1: T[], array2: T[]): T[] {
  * @returns Intersection of arrays
  */
 export function intersect<T>(array1: T[], array2: T[]): T[] {
-    return array1.filter((item) => array2.includes(item));
+  return array1.filter((item) => array2.includes(item));
 }
 
 /**
@@ -67,5 +64,5 @@ export function intersect<T>(array1: T[], array2: T[]): T[] {
  * @returns Array with unique values
  */
 export function removeDuplicates<T>(array: T[]): T[] {
-    return [...new Set(array)];
+  return [...new Set(array)];
 }

@@ -6,7 +6,7 @@
  * @returns Cloned object
  */
 export function deepClone<T>(obj: T): T {
-    return JSON.parse(JSON.stringify(obj));
+  return JSON.parse(JSON.stringify(obj));
 }
 
 /**
@@ -16,7 +16,7 @@ export function deepClone<T>(obj: T): T {
  * @returns Merged object
  */
 export function mergeObjects<T>(target: T, source: Partial<T>): T {
-    return Object.assign({}, target, source);
+  return Object.assign({}, target, source);
 }
 
 /**
@@ -25,7 +25,7 @@ export function mergeObjects<T>(target: T, source: Partial<T>): T {
  * @returns Object keys
  */
 export function getObjectKeys(obj: object): string[] {
-    return Object.keys(obj);
+  return Object.keys(obj);
 }
 
 /**
@@ -34,7 +34,7 @@ export function getObjectKeys(obj: object): string[] {
  * @returns Object values
  */
 export function getObjectValues<T>(obj: Record<string, T>): T[] {
-    return Object.values(obj);
+  return Object.values(obj);
 }
 
 /**
@@ -43,7 +43,7 @@ export function getObjectValues<T>(obj: Record<string, T>): T[] {
  * @returns Whether the object is empty
  */
 export function isEmptyObject(obj: object): boolean {
-    return Object.keys(obj).length === 0;
+  return Object.keys(obj).length === 0;
 }
 
 /**
@@ -52,13 +52,19 @@ export function isEmptyObject(obj: object): boolean {
  * @param keys - Keys to pick
  * @returns Object with picked keys
  */
-export function pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
-    return keys.reduce((result, key) => {
-        if (key in obj) {
-            result[key] = obj[key];
-        }
-        return result;
-    }, {} as Pick<T, K>);
+export function pick<T extends object, K extends keyof T>(
+  obj: T,
+  keys: K[]
+): Pick<T, K> {
+  return keys.reduce(
+    (result, key) => {
+      if (key in obj) {
+        result[key] = obj[key];
+      }
+      return result;
+    },
+    {} as Pick<T, K>
+  );
 }
 
 /**
@@ -68,11 +74,11 @@ export function pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pi
  * @returns Object with omitted keys
  */
 export function omit<T, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
-    const result = { ...obj };
-    for (const key of keys) {
-        delete result[key];
-    }
-    return result;
+  const result = { ...obj };
+  for (const key of keys) {
+    delete result[key];
+  }
+  return result;
 }
 
 /**
@@ -82,7 +88,7 @@ export function omit<T, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
  * @returns Whether the object has the key
  */
 export function hasKey(obj: object, key: string): boolean {
-    return Object.prototype.hasOwnProperty.call(obj, key);
+  return Object.prototype.hasOwnProperty.call(obj, key);
 }
 
 /**
@@ -92,15 +98,15 @@ export function hasKey(obj: object, key: string): boolean {
  * @returns Merged object
  */
 export function mergeDeep(target: any, source: any): any {
-    for (const key in source) {
-        if (source[key] && typeof source[key] === 'object') {
-            target[key] = target[key] || {};
-            mergeDeep(target[key], source[key]);
-        } else {
-            target[key] = source[key];
-        }
+  for (const key in source) {
+    if (source[key] && typeof source[key] === 'object') {
+      target[key] = target[key] || {};
+      mergeDeep(target[key], source[key]);
+    } else {
+      target[key] = source[key];
     }
-    return target;
+  }
+  return target;
 }
 
 /**
@@ -109,5 +115,5 @@ export function mergeDeep(target: any, source: any): any {
  * @returns Array of key-value pairs
  */
 export function toEntries<T>(obj: Record<string, T>): [string, T][] {
-    return Object.entries(obj);
+  return Object.entries(obj);
 }
