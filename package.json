@@ -1,6 +1,6 @@
 {
   "name": "@akki907/my-awesome-library",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple TypeScript npm library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,15 +27,15 @@
     "publish": "npm publish --access public"
   },
   "lint-staged": {
-  "*.ts": [
-    "prettier --write",
-    "git add"
-  ],
-  "*.js": [
-    "prettier --write",
-    "git add"
-  ]
-},
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "keywords": [
     "utility",
     "library"
