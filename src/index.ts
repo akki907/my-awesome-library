@@ -22,14 +22,23 @@ export class AwesomeLibrary {
     static truncateString = StringUtils.truncateString;
     static isValidEmail = StringUtils.isValidEmail;
     static toSlug = StringUtils.toSlug;
+    static capitalize = StringUtils.capitalize;
 
     // Array Utilities
     static shuffleArray = ArrayUtils.shuffleArray;
     static removeDuplicates = ArrayUtils.removeDuplicates;
+    static sortByKey = ArrayUtils.sortByKey;
+    static chunk = ArrayUtils.chunk;
+    static difference = ArrayUtils.difference;
+    static intersect = ArrayUtils.intersect;
+
 
     // Date Utilities
     static formatDate = DateUtils.formatDate;
     static daysBetween = DateUtils.daysBetween;
+    static addDays = DateUtils.addDays;
+    static isSameDay = DateUtils.isSameDay;
+
 
     // UUID Utility
     static generateUUID = UUIDUtils.generateUUID;
