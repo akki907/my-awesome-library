@@ -26,7 +26,11 @@ export class AwesomeLibrary {
      * @param suffix - Suffix to add if truncated (default: '...')
      * @returns Truncated string
      */
-    static truncateString(str: string, maxLength: number, suffix: string = '...'): string {
+    static truncateString(
+        str: string,
+        maxLength: number,
+        suffix: string = '...'
+    ): string {
         if (str.length <= maxLength) return str;
         return str.slice(0, maxLength) + suffix;
     }
@@ -70,8 +74,8 @@ export class AwesomeLibrary {
      */
     static generateUUID(): string {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-            const r = Math.random() * 16 | 0;
-            const v = c === 'x' ? r : (r & 0x3 | 0x8);
+            const r = (Math.random() * 16) | 0;
+            const v = c === 'x' ? r : (r & 0x3) | 0x8;
             return v.toString(16);
         });
     }
@@ -97,7 +101,10 @@ export class AwesomeLibrary {
         const shuffledArray = [...array];
         for (let i = shuffledArray.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+            [shuffledArray[i], shuffledArray[j]] = [
+                shuffledArray[j],
+                shuffledArray[i],
+            ];
         }
         return shuffledArray;
     }
