@@ -1,42 +1,78 @@
-# My Awesome TypeScript Library
+# Awesome Utility Library
 
-A simple utility library with helpful functions, now with TypeScript support.
+A comprehensive TypeScript utility library with a wide range of helpful functions.
 
 ## Installation
 
 ```bash
-npm install my-awesome-library
+npm install @akki907/my-awesome-library
 ```
 
 ## Usage
 
 ```typescript
-import { AwesomeLibrary } from 'my-awesome-library';
+import { AwesomeLibrary } from '@akki907/my-awesome-library';
 
-// Generate a random number between 1 and 10
-console.log(AwesomeLibrary.randomNumber(1, 10));
+// String Utilities
+console.log(AwesomeLibrary.truncateString('Hello World', 5)); // 'Hello...'
+console.log(AwesomeLibrary.isValidEmail('test@example.com')); // true
+console.log(AwesomeLibrary.toSlug('Hello World!')); // 'hello-world'
 
-// Capitalize a string
-console.log(AwesomeLibrary.capitalize('hello')); // 'Hello'
+// Number Utilities
+console.log(AwesomeLibrary.formatNumber(1000000)); // '1,000,000'
+console.log(AwesomeLibrary.generateUUID()); // 'f47ac10b-58cc-4372-a567-0e02b2c3d479'
 
-// Check if a number is even
-console.log(AwesomeLibrary.isEven(4)); // true
+// Array Utilities
+const numbers = [1, 2, 2, 3, 4, 4, 5];
+console.log(AwesomeLibrary.removeDuplicates(numbers)); // [1, 2, 3, 4, 5]
 
-// Check if a value is a number
-console.log(AwesomeLibrary.isNumber(42)); // true
+// Date Utilities
+const date = new Date();
+console.log(AwesomeLibrary.formatDate(date)); // '12/25/2023'
 ```
 
 ## Methods
 
-- `randomNumber(min, max)`: Generates a random number in a given range
-- `capitalize(str)`: Capitalizes the first letter of a string
-- `isEven(num)`: Checks if a number is even
-- `isNumber(value)`: Checks if a value is a valid number
+### String Utilities
+- `truncateString(str, maxLength, suffix)`: Truncate a string
+- `isValidEmail(email)`: Validate email address
+- `toSlug(str)`: Convert string to URL-friendly slug
 
-## TypeScript Support
+### Number Utilities
+- `formatNumber(num)`: Add thousand separators
+- `generateUUID()`: Create a unique identifier
+- `roundTo(num, decimalPlaces)`: Round to specific decimal places
 
-This library is written in TypeScript and provides full type definitions.
+### Array Utilities
+- `shuffleArray(array)`: Randomly shuffle array
+- `removeDuplicates(array)`: Remove duplicate values
+
+### Date Utilities
+- `formatDate(date, format)`: Format date to string
+- `daysBetween(date1, date2)`: Calculate days between dates
 
 ## License
 
 MIT
+```
+
+New Features Added:
+1. String Utilities
+   - String truncation
+   - Email validation
+   - Slug generation
+
+2. Number Utilities
+   - Number formatting
+   - UUID generation
+   - Precise rounding
+
+3. Array Utilities
+   - Array shuffling
+   - Duplicate removal
+
+4. Date Utilities
+   - Date formatting
+   - Days between dates calculation
+
+Would you like me to elaborate on any of these new functions or add any specific utility methods?
