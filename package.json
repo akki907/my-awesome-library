@@ -1,17 +1,21 @@
 {
-  "name": "my-awesome-library",
-  "version": "1.0.0",
+  "name": "@akki907/my-awesome-library",
+  "version": "1.0.1",
   "description": "A simple TypeScript npm library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "publish": "npm publish --access public"
   },
-  "keywords": ["utility", "library", "typescript"],
-  "author": "Your Name",
+  "keywords": ["utility", "library"],
+  "author": "Akki",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.2",
