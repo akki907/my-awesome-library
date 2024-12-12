@@ -6,12 +6,21 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "bump": "npm version patch",
+    "prepublishOnly": "npm run build",
+    "publish-auto": "npm run bump && npm publish --access public",
+    "version:patch": "ts-node scripts/version-management.ts patch",
+    "version:minor": "ts-node scripts/version-management.ts minor",
+    "version:major": "ts-node scripts/version-management.ts major",
     "test": "jest",
     "prepare": "npm run build",
     "test:watch": "jest --watch",
     "publish": "npm publish --access public"
   },
-  "keywords": ["utility", "library"],
+  "keywords": [
+    "utility",
+    "library"
+  ],
   "author": "Akki",
   "license": "MIT",
   "publishConfig": {
