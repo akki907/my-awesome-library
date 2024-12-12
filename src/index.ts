@@ -60,15 +60,14 @@ import * as UUIDUtils from './utilities/uuid';
  * - `uuid`: Access to the UUID utility function.
  */
 
-
 const AwesomeLibrary = {
-    ...ArrayUtils,
-    ...StringUtils,
-    ...NumberUtils,
-    ...DateUtils,
-    ...ObjectUtils,
-    ...UUIDUtils,
-}
+  ...ArrayUtils,
+  ...StringUtils,
+  ...NumberUtils,
+  ...DateUtils,
+  ...ObjectUtils,
+  ...UUIDUtils,
+};
 
 // Export modules and the main class
 export * as ArrayUtils from './utilities/arrays';

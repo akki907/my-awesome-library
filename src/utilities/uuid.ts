@@ -1,5 +1,3 @@
-// src/utilities/uuid.ts
-
 /**
  * Generates a random UUID
  * @returns Unique UUID string
