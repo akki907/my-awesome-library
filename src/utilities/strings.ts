@@ -74,6 +74,30 @@ export function toCamelCase(str: string): string {
 }
 
 /**
+ * Generates a random string of specified length
+ * @param length - The length of the random string
+ * @returns A random string
+ */
+export function generateRandomString(length: number): string {
+  const characters =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
+
+/**
+ * Converts a camelCase string to snake_case
+ * @param str - The camelCase string
+ * @returns The snake_case formatted string
+ */
+export function camelToSnake(str: string): string {
+  return str.replace(/[A-Z]/g, (match) => `_${match.toLowerCase()}`);
+}
+
+/**
  * Checks if a string is a valid email
  * @param email - Email to validate
  * @returns Whether the email is valid

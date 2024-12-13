@@ -74,3 +74,18 @@ export function roundTo(num: number, decimalPlaces: number = 2): number {
   const factor = Math.pow(10, decimalPlaces);
   return Math.round(num * factor) / factor;
 }
+
+/**
+ * Formats a number to a locale-specific string with options
+ * @param value - The number to format
+ * @param locale - The locale code (default: 'en-US')
+ * @param options - Intl.NumberFormat options to customize the format
+ * @returns A formatted number string
+ */
+export function formatNumberToLocaleString(
+  value: number,
+  locale: string = 'en-US',
+  options?: Intl.NumberFormatOptions
+): string {
+  return value.toLocaleString(locale, options);
+}

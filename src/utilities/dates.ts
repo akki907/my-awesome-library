@@ -698,3 +698,48 @@ export function isThisMonth(date: Date): boolean {
 export function isThisYear(date: Date): boolean {
   return isSameYear(date, new Date());
 }
+
+/**
+ * Returns the current date and time in the specified format
+ * @param format - The format string
+ * @returns The formatted date and time
+ */
+export function getCurrentDateTime(format = 'yyyy-MM-dd HH:mm:ss'): string {
+  const date = new Date();
+  const map: Record<string, number> = {
+    yyyy: date.getFullYear(),
+    MM: date.getMonth() + 1,
+    dd: date.getDate(),
+    HH: date.getHours(),
+    mm: date.getMinutes(),
+    ss: date.getSeconds(),
+  };
+
+  return format.replace(/yyyy|MM|dd|HH|mm|ss/g, (match) => {
+    return String(map[match]).padStart(2, '0');
+  });
+}
+
+/**
+ * Formats a date to a locale-specific string
+ * @param date - The date to format
+ * @param locale - The locale code (default: 'en-US')
+ * @param options - Intl.DateTimeFormat options to customize the format
+ * @returns A formatted date string
+ */
+export function formatDateToLocaleString(
+  date: Date | string | number,
+  locale: string = 'en-US',
+  options?: Intl.DateTimeFormatOptions
+): string {
+  const dateObj =
+    typeof date === 'string' || typeof date === 'number'
+      ? new Date(date)
+      : date;
+
+  if (isNaN(dateObj.getTime())) {
+    throw new Error('Invalid date provided');
+  }
+
+  return dateObj.toLocaleString(locale, options);
+}

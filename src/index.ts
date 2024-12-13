@@ -7,7 +7,7 @@ import * as NumberUtils from './utilities/numbers';
 import * as DateUtils from './utilities/dates';
 import * as ObjectUtils from './utilities/objects';
 import * as UUIDUtils from './utilities/uuid';
-
+import * as helperUtils from './utilities/helper';
 /**
  * The `AwesomeLibrary` class provides a collection of utility functions for various data types,
  * including numbers, objects, strings, arrays, dates, and UUIDs. It re-exports all utility functions
@@ -67,6 +67,7 @@ const AwesomeLibrary = {
   ...DateUtils,
   ...ObjectUtils,
   ...UUIDUtils,
+  ...helperUtils,
 };
 
 // Export modules and the main class
@@ -76,5 +77,5 @@ export * as NumberUtils from './utilities/numbers';
 export * as DateUtils from './utilities/dates';
 export * as ObjectUtils from './utilities/objects';
 export * as UUIDUtils from './utilities/uuid';
-
+export * as helperUtils from './utilities/helper';
 export default AwesomeLibrary;
