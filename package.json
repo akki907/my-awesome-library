@@ -1,7 +1,7 @@
 {
-  "name": "@akki907/my-awesome-library",
+  "name": "@akki907/helper.js",
   "version": "1.0.9",
-  "description": "A simple TypeScript npm library",
+  "description": "A utility library for JavaScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "husky": {
