@@ -1,6 +1,6 @@
 {
   "name": "@akki907/helper.js",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A utility library for JavaScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
